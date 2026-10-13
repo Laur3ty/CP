@@ -14,7 +14,7 @@ O **Sorriso Recorrente** é uma plataforma para a **Turma do Bem** transformar d
 
 | Anna Júlia de Albuquerque Martins  | RM: 574866
 | Gabriella Barriquello Passos       | RM: 568278
-| Gabriel Cunha Dos Santos           | RM: 575632 
+| Gabriel Cunha dos Santos           | RM: 575632 
 | Laura Fagundes Pereira             | RM: 574730
 | Paulo Guilherme Sobreira Althaus   | RM: 575324
 
