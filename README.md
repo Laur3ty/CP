@@ -1,6 +1,6 @@
-# Sorriso Recorrente · Site (Front-End Design Engineering, Sprint 1)
+# Sorriso Recorrente · Site (Front-End Design Engineering, Sprint 2)
 
-Site em **HTML e CSS**, versão **desktop**, criado para o Challenge FIAP × Turma do Bem (1TDSPR).
+Site em **HTML, CSS e JavaScript**, versão **Layout Responsivo**, criado para o Challenge FIAP × Turma do Bem (1TDSPR).
 
 ## Objetivo do projeto
 
@@ -24,6 +24,10 @@ O **Sorriso Recorrente** é uma plataforma para a **Turma do Bem** transformar d
 2. Abra `index.html` em um navegador.
 
 Não é necessário instalar nada.
+
+## Imagens do site
+
+[Demonstração da aplicação JavaScript](img/aplicacao.js.JPG)
 
 ## Estrutura do projeto
 
@@ -55,4 +59,8 @@ Não é necessário instalar nada.
 │   ├── sorrIA.JPG
 │   └── valor.doado.JPG
 │   └── visao.indicadores.JPG
+├── js/
+│   ├── carrossel.js
+│   └── form.js
+│   └── script.js
 └── README.md
