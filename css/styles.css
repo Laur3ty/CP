@@ -1,5 +1,6 @@
 /* Paleta de cor do site */
 :root {
+    --seta: #bdff80;
     --lima: #ADFF2F;
     --verde: #7CFC00;
     --amarelo: #FFD700;
@@ -20,6 +21,13 @@ body {
     line-height: 1.6;
     color: var(--escuro);
     background: var(--creme);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 img { 
@@ -52,7 +60,7 @@ p {
 }
 
 .container {
-    max-width: 1250px; 
+    max-width: 1200px; 
     margin: 0 auto; 
 }
 
@@ -96,6 +104,10 @@ main article {
     text-decoration: none;
 }
 
+.btn-menu {
+    display: none;
+}
+
 .menu .btn:hover { 
     background: var(--amarelo); 
 }
@@ -114,11 +126,6 @@ main article {
 article.hero {
     padding: 70px 24px;
     background: var(--amarelo);
-}
-
-.hero .container {
-    max-width: 1200px; 
-    margin: 0 auto; 
 }
 
 /* Challenge FIAP × Turma do Bem */
@@ -298,16 +305,32 @@ input:focus, select:focus, textarea:focus {
 /* Estilização da página de integrantes */
 .integrantes {
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: center;
+    flex-wrap: nowrap;
     gap: 2%;
+    transition: transform 0.5s ease-in-out;
 }
 
-.integrante { 
-    width: 32%; 
-    margin-bottom: 20px; 
-    padding: 24px; 
-    text-align: center; 
+.carrossel {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.integrante {
+    flex: 0 0 32%;
+    margin-bottom: 20px;
+    padding: 24px;
+    text-align: center;
+}
+
+.seta {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    background-color: var(--seta) ;
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 1;
 }
 
 .integrante img { 
@@ -335,27 +358,124 @@ input:focus, select:focus, textarea:focus {
 
 /* Telas grandes (>= 1300px) */
 @media (min-width: 1300px) {
-    body { 
-        font-size: 18px; 
+    body {
+        font-size: 18px;
     }
-    .header, footer.footer { 
-        padding-left: 8%; 
-        padding-right: 8%; 
-    } 
+    .header, footer.footer {
+        padding-left: 8%;
+        padding-right: 8%;
+    }
 }
 
-/*  Telas menores (< 992px): tudo em uma coluna  */
+/* Telas menores (< 992px) */
 @media (max-width: 991px) {
     .cards, .container.tecnologias, .lista-grade {
-        grid-template-columns: 1fr; 
-}
+        grid-template-columns: 1fr;
+    }
     .container.sobre {
-        flex-direction: column; 
+        flex-direction: column;
     }
     .secao-demo .container {
-        flex-basis: 100%; 
+        flex-basis: 100%;
+    }
+    .carrossel {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+    .integrantes {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 0;
     }
     .integrante {
-        width: 100%; 
+        flex: 0 0 80%;
+        width: 80%;
+        margin: 0 10%;
+    }
+    .seta {
+        position: absolute;
+        top: 50%;
+        background: transparent;
+        transform: translateY(-50%);
+        z-index: 2;
+    }
+    .esquerda {
+        left: 5px;
+    }
+    .direita {
+        right: 5px;
+    }
+    .footer {
+        align-items: flex-end;
+    }
+    .btn-menu {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 28px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    .header {
+        position: relative;
+    }
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 260px;
+        height: 100vh;
+        background: var(--lima);
+        flex-direction: column;
+        justify-content:flex-start;
+        padding-top: 28px;
+        align-items: center;
+        gap: 10px;
+        z-index: 1000;
+        transition: right 0.3s ease-in-out;
+    }
+    .menu.ativo-menu {
+        right: 0;
+    }
+    .menu .btn {
+        width: 90%;         
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+/* Celular (< 480)*/
+@media (max-width: 480px) {
+    .carrossel {
+        display: block;
+    }
+    .integrante {
+        flex-basis: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+    }
+    .integrante img {
+        width: 180px;
+        height: 180px;
+        margin: 0 auto 12px;
+    }
+    .integrante h3 {
+        font-size: 18px;
+    }
+    .integrante dl {
+        font-size: 14px;
+        text-align: left;
+    }
+    .footer {
+        justify-content: center;
+        gap: 12px;
+        padding: 12px;
+        text-align: center;
+        font-size: 18px;
+    }
+    .footer p {
+        margin: 0;
     }
 }
