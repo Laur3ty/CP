@@ -27,7 +27,7 @@ Não é necessário instalar nada.
 
 ## Imagens do site
 
-[Demonstração da aplicação JavaScript](img/aplicacao.js.JPG)
+![Demonstração da aplicação JavaScript](img/aplicacao.js.JPG)
 
 ## Estrutura do projeto
 
